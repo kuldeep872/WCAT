@@ -3,7 +3,7 @@ It is used to display or make a copy content of one or more files in terminal
 
 commands:
 
-1.wcat filepath => displays content of the file in the terminal
+1.wcat filepath => displays content of the file in the terminal 
 
 2. wcat filepath1 filepath2 filepath3... => displays content of all files in the terminal(contactinated form) in the given order.
   
