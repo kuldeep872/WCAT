@@ -1,5 +1,6 @@
-l#!/usr/bin / env node
-let fs = require("fs");
+#!/usr/bin / env node
+
+import { existsSync, readFileSync } from "fs";
 // input
 let inputArr = process.argv.slice(2);
 // options
@@ -23,7 +24,7 @@ if (isBothPresent == true) {
 }
 // existence
 for (let i = 0; i < filesArr.length; i++) {
-    let isPresent = fs.existsSync(filesArr[i]);
+    let isPresent = existsSync(filesArr[i]);
     if (isPresent == false) {
         console.log(`file ${filesArr[i]} is not present`);
         return;
@@ -32,7 +33,7 @@ for (let i = 0; i < filesArr.length; i++) {
 // read
 let content = "";
 for (let i = 0; i < filesArr.length; i++) {
-    let bufferContent = fs.readFileSync(filesArr[i]);
+    let bufferContent = readFileSync(filesArr[i]);
     content += bufferContent + "\r\n";
 }
 let contentArr = content.split("\r\n");
